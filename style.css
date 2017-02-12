@@ -1,0 +1,164 @@
+@font-face {
+    font-family: indicatorFont;
+    src: url("fonts/PixelSplitter-Bold.ttf");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    background: rgb(31, 31, 31);
+}
+
+#speed-container {
+    position: absolute;
+    text-align: center;
+    bottom: 2em;
+    left: 2em;
+    z-index: 1;
+}
+
+#zoom-container {
+    position: absolute;
+    text-align: center;
+    bottom: 2em;
+    right: 2em;
+    z-index: 1;
+}
+
+input[type=range] {
+    background: transparent;
+    -webkit-appearance: none;
+    outline-width: 0;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #F51460;
+    width: 16px;
+    height: 16px;
+    border-radius: 100px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    margin-top: -4px;
+
+    transition: width 100ms ease-in-out, height 100ms ease-in-out, margin-top 100ms ease-in-out, background 100ms ease;
+}
+
+input[type=range]:active::-webkit-slider-thumb {
+    background: #f65289;
+    width: 20px;
+    height: 20px;
+    margin-top: -6px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 350px;
+    height: 10px;
+    vertical-align: middle;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #c50043;
+    border-radius: 20px ;
+    border: 0.2px solid #010101;
+    cursor: pointer;
+}
+
+.indicator {
+    position: relative;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: indicatorFont;
+    font-size: 1.1em;
+    color: #F51460;
+    text-shadow: 1.5px 1.5px 5px #000;
+}
+
+#solar-links-container {
+    position: absolute;
+    display: table;
+    left: 50%;
+    margin-left: -250px;
+    padding: 0;
+    bottom: 0;
+    width: 500px;
+    list-style-type: none;
+    z-index: 2;
+}
+
+.solar-list-item {
+    position: relative;
+    display: inline-table;;
+    width: 3em;
+    height: 3em;
+    border-radius: 3em;
+    background: #F51460;
+    box-shadow: none;
+    cursor: pointer;
+    z-index: 2;
+
+    align-text: center;
+
+    transition: background 200ms ease, box-shadow 400ms ease;
+}
+
+.solar-list-item:hover {
+    box-shadow: 0 0 20px #f06695;
+    background: #f06695;
+}
+
+.solar-list-item:not(:last-child) {
+    margin-right: 0.5em;
+}
+
+.planet-illustration {
+    position: absolute;
+    display: inline-block;
+
+    width: 2em;
+    height: 2em;
+
+    top: 50%;
+    left: 50%;
+    margin-top: -1em;
+    margin-left: -1em;
+    background: #FFF;
+
+    border-radius: 100%;
+}
+
+#sun {
+    background: rgb(255, 206, 0);
+}
+
+#mercury {
+    background: rgb(114, 114, 114);
+}
+
+#venus {
+    background: rgb(212, 147, 47);
+}
+
+#earth {
+    background: rgb(51, 160, 210);
+}
+
+#mars {
+    background: rgb(193, 68, 14);
+}
+
+#jupiter {
+    background: rgb(216, 202, 157);
+}
+
+#saturn {
+    background: rgb(227, 224, 192);
+}
+
+#uranus {
+    background: rgb(198, 211, 227);
+}
+
+#neptune {
+    background: rgb(63, 84, 186);
+}

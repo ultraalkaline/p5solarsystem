@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>The Solar System</title>
+   <link rel="stylesheet" href="style.css" type="text/css"/>
+   <script src="js/lib/jquery-3.1.1.js" type="text/javascript"></script>
+   <script src="js/lib/p5.js" type="text/javascript"></script>
+   <script src="js/lib/p5.dom.js" type="text/javascript"></script>
+   <script src="js/lib/p5.sound.js" type="text/javascript"></script>
+   <script src="js/main.js" type="text/javascript"></script>
+   <script src="js/star.js" type="text/javascript"></script>
+   <script src="js/planet.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+    <ul id="solar-links-container">
+        <li id="sun-list-item" class="solar-list-item">
+            <div id="sun" class="planet-illustration"></div>
+        </li>
+
+        <li id="mercury-list-item" class="solar-list-item">
+            <div id="mercury" class="planet-illustration"></div>
+        </li>
+
+        <li id="venus-list-item" class="solar-list-item">
+            <div id="venus" class="planet-illustration"></div>
+        </li>
+
+        <li id="earth-list-item" class="solar-list-item">
+            <div id="earth" class="planet-illustration"></div>
+        </li>
+
+        <li id="mars-list-item" class="solar-list-item">
+            <div id="mars" class="planet-illustration"></div>
+        </li>
+
+        <li id="jupiter-list-item" class="solar-list-item">
+            <div id="jupiter" class="planet-illustration"></div>
+        </li>
+
+        <li id="saturn-list-item" class="solar-list-item">
+            <div id="saturn" class="planet-illustration"></div>
+        </li>
+
+        <li id="uranus-list-item" class="solar-list-item">
+            <div id="uranus" class="planet-illustration"></div>
+        </li>
+
+        <li id="neptune-list-item" class="solar-list-item">
+            <div id="neptune" class="planet-illustration"></div>
+        </li>
+    </ul>
+    <div id="zoom-container">
+        <p id="zoom-indicator" class="indicator">Zoom:&nbsp;</p>
+        <input id="zoom-slider" class="slider" type="range" max="50000" min="50" value="500" step="500"></input>
+    </div>
+
+    <div id="speed-container">
+        <p id="speed-indicator" class="indicator">Speed:&nbsp;</p>
+        <input id="speed-slider" class="slider" type="range" max="10000" min="0" value="1000" step="100"></input>
+    </div>
+
+</body>
+</html>
