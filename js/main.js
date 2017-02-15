@@ -24,6 +24,7 @@ function setup() {
        stars[i] = new Star();
    }
 
+   // The Sun
    sun = new Planet("Sun", 10000, 0, 0);
    sun.setColor(255, 206, 0, 50);
    solarSystem.push(sun);
@@ -59,13 +60,13 @@ function setup() {
    solarSystem.push(jupiter);
 
    // Saturn
-   saturn = new Planet("Saturn", 842, 20498, 22.75);
+   saturn = new Planet("Saturn", 842, 20498, 23);
    saturn.setColor(227, 224, 192);
    sun.addMoonObject(saturn);
    solarSystem.push(saturn);
 
    // Uranus
-   uranus = new Planet("Uranus", 367, 41182, 7.85);
+   uranus = new Planet("Uranus", 367, 41182, 8);
    uranus.setColor(198, 211, 227);
    sun.addMoonObject(uranus);
    solarSystem.push(uranus);
@@ -114,6 +115,14 @@ function setup() {
            currentPerspective = neptune;
    });
 
+   // Show tooltip of planet name on hover
+   $(".solar-list-item").mouseenter(function(){
+       $(this).find("span").show();
+   });
+   $(".solar-list-item").mouseleave(function(){
+       $(this).find("span").fadeOut(200);
+   });
+
 }
 
 function draw() {
@@ -121,8 +130,6 @@ function draw() {
 
     speedMulti = $("#speed-slider").val() / 1000;
     zoomMulti = $("#zoom-slider").val() / 1000;
-
-
 
     $("#speed-indicator").html("Speed: " + speedMulti + "x");
     $("#zoom-indicator").html("Zoom: " + zoomMulti * 2 + "x");
@@ -142,17 +149,13 @@ function draw() {
 
 }
 
-
-
-
-
-// function mouseClicked() {
-//     if (currentPerspective != uranus) {
-//         currentPerspective = uranus;
-//     } else {
-//         currentPerspective = undefined;
-//     }
-// }
+function mouseClicked() {
+    if (!mercury.orbitHidden) {
+        mercury.hideOrbit();
+    } else {
+        mercury.showOrbit();
+    }
+}
 
 function windowResized() {
     canvas.size(windowWidth, windowHeight);

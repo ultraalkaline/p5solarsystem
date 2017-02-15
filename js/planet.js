@@ -5,7 +5,7 @@ function Planet(name, radius, distance, orbitSpeed, color, angle) {
     this.distance = distance / 10 / 2;
     this.orbitSpeed = orbitSpeed / 100000;
 
-    this.orbitHidden = false;
+    this.orbitHidden = true;
 
     if (color != undefined) {
         this.color = color;
@@ -27,6 +27,10 @@ function Planet(name, radius, distance, orbitSpeed, color, angle) {
         this.angle += this.orbitSpeed * speedMulti;
         this.showOrbit();
 
+        this.x = this.distance * zoomMulti * cos(this.angle);
+        this.y = this.distance * zoomMulti * sin(this.angle);
+        this.position = createVector(this.x, this.y);
+
         if (this.planets.length != 0) {
             for (var i = 0; i < this.planets.length; i++) {
                 this.planets[i].orbit();
@@ -39,9 +43,6 @@ function Planet(name, radius, distance, orbitSpeed, color, angle) {
     this.show = function() {
         push();
         rotate(this.angle);
-        this.x = this.distance * zoomMulti * cos(this.angle);
-        this.y = this.distance * zoomMulti * sin(this.angle);
-        this.position = createVector(this.x, this.y);
         translate(this.distance * zoomMulti, 0);
         noStroke();
         fill(this.color[0], this.color[1], this.color[2]);
