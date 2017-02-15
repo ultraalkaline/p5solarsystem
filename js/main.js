@@ -132,7 +132,7 @@ function draw() {
     zoomMulti = $("#zoom-slider").val() / 1000;
 
     $("#speed-indicator").html("Speed: " + speedMulti + "x");
-    $("#zoom-indicator").html("Zoom: " + zoomMulti * 2 + "x");
+    $("#zoom-indicator").html("Zoom: " + zoomMulti + "x");
 
     for (var i = 0; i < stars.length; i++) {
        stars[i].move();
