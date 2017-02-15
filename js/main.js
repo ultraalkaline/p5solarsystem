@@ -145,8 +145,6 @@ function draw() {
     changePerspective(currentPerspective);
     sun.show();
     sun.orbit();
-
-
 }
 
 function mouseClicked() {
@@ -160,6 +158,11 @@ function mouseClicked() {
 function windowResized() {
     canvas.size(windowWidth, windowHeight);
     canvas.position(0, 0);
+}
+
+function mouseWheel(event) {
+    $("#zoom-slider").val($("#zoom-slider").val() - event.delta*2);
+    $("#zoom-indicator").html("Zoom: " + zoomMulti * 2 + "x");
 }
 
 // Change the perspective of the camera to respective planet.
