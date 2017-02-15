@@ -17,6 +17,8 @@ function setup() {
    canvas.position(0, 0);
    frameRate(framerate);
 
+   $("#zoom-slider").val(5000);
+
    speedMulti = $("#speed-slider").val() / 1000;
    zoomMulti = $("#zoom-slider").val() / 1000;
 
@@ -147,21 +149,13 @@ function draw() {
     sun.orbit();
 }
 
-function mouseClicked() {
-    if (!mercury.orbitHidden) {
-        mercury.hideOrbit();
-    } else {
-        mercury.showOrbit();
-    }
-}
-
 function windowResized() {
     canvas.size(windowWidth, windowHeight);
     canvas.position(0, 0);
 }
 
 function mouseWheel(event) {
-    $("#zoom-slider").val($("#zoom-slider").val() - event.delta*2);
+    $("#zoom-slider").val($("#zoom-slider").val() - event.delta*20);
     $("#zoom-indicator").html("Zoom: " + zoomMulti * 2 + "x");
 }
 

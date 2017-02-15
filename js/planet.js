@@ -47,7 +47,16 @@ function Planet(name, radius, distance, orbitSpeed, color, angle) {
         noStroke();
         fill(this.color[0], this.color[1], this.color[2]);
         ellipse(0, 0, this.radius * 2 * zoomMulti, this.radius * 2 * zoomMulti);
-        if (this.name == "Saturn") {
+        if (this.name == "Sun") {
+            push();
+            noFill();
+            strokeWeight(0.02);
+            for (var i = 255; i--;) {
+                stroke(255, 206, 0, 255-i);
+                ellipse(0, 0, (this.radius + 0.02 * i) * 2 * zoomMulti, (this.radius + 0.02 * i) * 2 * zoomMulti);
+            }
+            pop();
+        } else if (this.name == "Saturn") {
             push();
             noFill();
             strokeWeight(0.2);
